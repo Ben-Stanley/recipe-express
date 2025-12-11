@@ -1,5 +1,7 @@
 # Recipe Express - recipe finder
 
+A NextJS app to search for recipes using the Spoonacular API.
+
 ## Project setup
 
 ```bash
