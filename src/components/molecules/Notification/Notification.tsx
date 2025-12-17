@@ -1,7 +1,7 @@
 import { CircleX, Info, TriangleAlert } from 'lucide-react'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
-import Button from '../atoms/Button'
+import Button from '../../atoms/Button/Button'
 
 interface NotificationProps {
   variant?: 'information' | 'warning' | 'error'
@@ -51,7 +51,10 @@ export default function Notification({
   onClick,
 }: NotificationProps & VariantProps<typeof notificationVariants>) {
   return (
-    <div className={cn(notificationVariants({ variant, className }))}>
+    <div
+      className={cn(notificationVariants({ variant, className }))}
+      data-testid="notification"
+    >
       <Icon variant={variant} className="shrink-0" />
 
       <div>

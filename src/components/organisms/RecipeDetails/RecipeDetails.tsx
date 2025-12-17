@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { Clock4, ChefHat, Circle, Users } from 'lucide-react'
-import Card from '@/components/atoms/Card'
-import Tag from '@/components/atoms/Tag'
+import Card from '@/components/atoms/Card/Card'
+import Tag from '@/components/atoms/Tag/Tag'
 
 export function RecipeDetails({ recipe }: { recipe: any }) {
   return (
@@ -18,7 +18,9 @@ export function RecipeDetails({ recipe }: { recipe: any }) {
         </div>
 
         <section className="py-6">
-          <h1 className="font-semibold text-xl mb-4">{recipe.title}</h1>
+          <h1 className="font-semibold text-xl mb-4" data-testid="recipe-title">
+            {recipe.title}
+          </h1>
           <p
             className="text-fore-secondary mb-6"
             dangerouslySetInnerHTML={{ __html: recipe.summary }}

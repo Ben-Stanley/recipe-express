@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import '@/assets/globals.css'
-import RecipeHeader from '@/components/organisms/RecipeHeader'
+import RecipeHeader from '@/components/organisms/RecipeHeader/RecipeHeader'
 import Providers from '@/components/Providers'
 
 const geistSans = Geist({

@@ -1,7 +1,7 @@
 import { Clock4, Heart, Users } from 'lucide-react'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
-import Tag from '../atoms/Tag'
+import Tag from '../../atoms/Tag/Tag'
 import { Recipe } from '@/lib/types/recipe'
 import { useFavourites } from '@/hooks/useFavourites'
 
@@ -54,9 +54,7 @@ export default function RecipeCard({
       </div>
 
       <div className="p-6">
-        <h2 className="font-semibold mb-2">
-          {recipe.title} - {isFavourite}
-        </h2>
+        <h2 className="font-semibold mb-2">{recipe.title}</h2>
 
         {(recipe.cuisines?.length > 0 || recipe.vegetarian) && (
           <div className="flex items-center gap-2 h-6 mt-5 mb-2">

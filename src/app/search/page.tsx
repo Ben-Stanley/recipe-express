@@ -2,9 +2,9 @@
 
 import { useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import SearchBar from '@/components/molecules/SearchBar'
-import RecipeList from '@/components/molecules/RecipeList'
-import Notification from '@/components/molecules/Notification'
+import SearchBar from '@/components/molecules/SearchBar/SearchBar'
+import RecipeList from '@/components/molecules/RecipeList/RecipeList'
+import Notification from '@/components/molecules/Notification/Notification'
 import Empty from '@/components/Empty'
 import { useSearchRecipes } from '@/hooks/useRecipes'
 

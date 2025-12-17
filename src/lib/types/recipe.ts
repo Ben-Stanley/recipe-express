@@ -6,10 +6,10 @@ export interface Recipe {
   image: string
   imageType: string
   servings: number
-  readyInMinutes: number
-  cookingMinutes: number
-  preparationMinutes: number
-  license: string
+  readyInMinutes: number | null
+  cookingMinutes: number | null
+  preparationMinutes: number | null
+  license: string | null
   sourceName: string
   sourceUrl: string
   spoonacularSourceUrl: string
@@ -25,7 +25,7 @@ export interface Recipe {
   gaps: string
   glutenFree: boolean
   instructions: string
-  ketogenic: boolean
+  ketogenic?: boolean
   lowFodmap: boolean
   occasions: string[]
   sustainable: boolean
@@ -33,12 +33,12 @@ export interface Recipe {
   vegetarian: boolean
   veryHealthy: boolean
   veryPopular: boolean
-  whole30: boolean
+  whole30?: boolean
   weightWatcherSmartPoints: number
   dishTypes: string[]
   extendedIngredients: ExtendedIngredient[]
   summary: string
-  winePairing: WinePairing
+  winePairing?: WinePairing
 }
 
 export interface AnalyzedInstruction {

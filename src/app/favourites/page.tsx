@@ -1,6 +1,6 @@
 'use client'
 
-import RecipeList from '@/components/molecules/RecipeList'
+import RecipeList from '@/components/molecules/RecipeList/RecipeList'
 import { useFavouritesStore } from '@/stores/favourites'
 
 export default function FavouritesPage() {

@@ -2,9 +2,9 @@
 
 import { useRouter } from 'next/navigation'
 import { useFeaturedRecipes } from '@/hooks/useRecipes'
-import RecipeList from '@/components/molecules/RecipeList'
-import SearchBar from '@/components/molecules/SearchBar'
-import Notification from '@/components/molecules/Notification'
+import RecipeList from '@/components/molecules/RecipeList/RecipeList'
+import SearchBar from '@/components/molecules/SearchBar/SearchBar'
+import Notification from '@/components/molecules/Notification/Notification'
 
 export default function Home() {
   const router = useRouter()

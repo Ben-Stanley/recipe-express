@@ -2,7 +2,7 @@
 
 import { useParams, useRouter } from 'next/navigation'
 import { Heart, ArrowLeft, LoaderCircle } from 'lucide-react'
-import Button from '../atoms/Button'
+import Button from '../../atoms/Button/Button'
 import { useRecipeDetails } from '@/hooks/useRecipes'
 import { useFavouritesStore } from '@/stores/favourites'
 
@@ -10,14 +10,7 @@ export default function AppHeader() {
   const router = useRouter()
   const { slug } = useParams()
 
-  console.log('Recipe slug in Header:', slug)
-
-  const {
-    data: recipe,
-    isLoading,
-    isError,
-    error,
-  } = useRecipeDetails(Number(Number(slug)))
+  const { data: recipe, isLoading } = useRecipeDetails(Number(Number(slug)))
 
   const toggleFavourite = useFavouritesStore((state) => state.toggleFavourite)
   const isFavourite = useFavouritesStore((state) =>
@@ -42,6 +35,7 @@ export default function AppHeader() {
         size="default"
         focus={isFavourite}
         onClick={handleAddRecipeToFavourites}
+        data-testid="favourite-button"
       >
         {isLoading ? (
           <LoaderCircle className="w-4 h-4 animate-spin" />

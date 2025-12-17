@@ -1,5 +1,5 @@
 import { useRouter } from 'next/navigation'
-import Button from '@/components/atoms/Button'
+import Button from '@/components/atoms/Button/Button'
 
 export default function Empty({ message }: { message: string }) {
   const router = useRouter()

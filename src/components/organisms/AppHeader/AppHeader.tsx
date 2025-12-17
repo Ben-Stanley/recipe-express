@@ -2,8 +2,8 @@
 
 import { useRouter } from 'next/navigation'
 import { Heart } from 'lucide-react'
-import Logo from '../molecules/Logo'
-import Button from '../atoms/Button'
+import Logo from '../../molecules/Logo/Logo'
+import Button from '../../atoms/Button/Button'
 import { useFavouritesStore } from '@/stores/favourites'
 
 type Props = {
@@ -20,7 +20,7 @@ export default function AppHeader({ showHomeButton = false }: Props) {
   }
   return (
     <header className="flex items-center justify-between border-b border-border px-4 sm:px-12 md:px-24 py-6">
-      <Logo onClick={handleLogoClick} />
+      <Logo onClick={handleLogoClick} data-testid="logo" />
 
       {!showHomeButton ? (
         <Button

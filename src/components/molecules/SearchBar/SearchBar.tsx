@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Search } from 'lucide-react'
-import Input from '@/components/atoms/Input'
+import Input from '@/components/atoms/Input/Input'
 import { cn } from '@/lib/utils'
 
 type SearchBarProps = {
