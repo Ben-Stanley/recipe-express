@@ -7,6 +7,7 @@ import RecipeList from '@/components/molecules/RecipeList/RecipeList'
 import Notification from '@/components/molecules/Notification/Notification'
 import Empty from '@/components/Empty'
 import { useSearchRecipes } from '@/hooks/useRecipes'
+import SkeletonCard from '@/components/skeletons/SkeletonCard'
 
 export default function Search() {
   const searchParams = useSearchParams()
@@ -42,7 +43,11 @@ export default function Search() {
             {recipes && ` - ${recipes.data.results.length} recipes`}
           </h2>
 
-          {isLoading && <p>Searching for recipes...</p>}
+          {isLoading && (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <SkeletonCard cardItems={9} />
+            </div>
+          )}
 
           {recipes && recipes.data.results.length === 0 && (
             <Empty message="No recipes found. Try adjusting your search." />

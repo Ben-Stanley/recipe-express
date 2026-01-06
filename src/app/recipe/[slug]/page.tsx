@@ -4,6 +4,7 @@ import { use } from 'react'
 import { RecipeDetails } from '@/components/organisms/RecipeDetails/RecipeDetails'
 import { useRecipeDetails } from '@/hooks/useRecipes'
 import Notification from '@/components/molecules/Notification/Notification'
+import SkeletonDetails from '@/components/skeletons/SkeletonDetails'
 
 export default function Recipe({
   params,
@@ -21,7 +22,7 @@ export default function Recipe({
 
   return (
     <div className="w-full min-h-screen">
-      {isLoading && <p>Loading recipe...</p>}
+      {isLoading && <SkeletonDetails />}
 
       {recipe && <RecipeDetails recipe={recipe.data} />}
 

@@ -5,6 +5,7 @@ import { useFeaturedRecipes } from '@/hooks/useRecipes'
 import RecipeList from '@/components/molecules/RecipeList/RecipeList'
 import SearchBar from '@/components/molecules/SearchBar/SearchBar'
 import Notification from '@/components/molecules/Notification/Notification'
+import SkeletonCard from '@/components/skeletons/SkeletonCard'
 
 export default function Home() {
   const router = useRouter()
@@ -41,7 +42,11 @@ export default function Home() {
         <section className="mt-16">
           <h2 className="text-lg font-medium mb-6">Featured Recipes</h2>
 
-          {isLoading && <p>Loading recipes...</p>}
+          {isLoading && (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <SkeletonCard cardItems={3} />
+            </div>
+          )}
 
           {featuredRecipes && (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

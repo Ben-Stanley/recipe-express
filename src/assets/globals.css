@@ -1,9 +1,10 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@import 'react-loading-skeleton/dist/skeleton.css';
 
 :root {
   --font-size: 16px;
   --primary: rgba(237, 116, 70, 1);
-   --secondary: rgba(71, 85, 105, 1);
+  --secondary: rgba(71, 85, 105, 1);
   --background: #ffffff;
   --foreground: #171717;
   --fore-secondary: rgba(113, 113, 129, 1);
