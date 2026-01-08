@@ -1,9 +1,10 @@
 import Image from 'next/image'
 import { Clock4, ChefHat, Circle, Users } from 'lucide-react'
+import { Recipe, ExtendedIngredient, InstructionStep } from '@/lib/types/recipe'
 import Card from '@/components/atoms/Card/Card'
 import Tag from '@/components/atoms/Tag/Tag'
 
-export function RecipeDetails({ recipe }: { recipe: any }) {
+export function RecipeDetails({ recipe }: { recipe: Recipe }) {
   return (
     <>
       <main>
@@ -83,7 +84,7 @@ export function RecipeDetails({ recipe }: { recipe: any }) {
 
             <ul className="space-y-3">
               {recipe.extendedIngredients?.map(
-                (ingredient: any, index: string) => (
+                (ingredient: ExtendedIngredient, index: number) => (
                   <li
                     key={`ingredient-${index}`}
                     className="flex items-center gap-3"
@@ -103,7 +104,7 @@ export function RecipeDetails({ recipe }: { recipe: any }) {
             <ul className="space-y-3">
               {recipe.analyzedInstructions &&
                 recipe.analyzedInstructions[0]?.steps?.map(
-                  (instruction: {}, index: number) => (
+                  (instruction: InstructionStep, index: number) => (
                     <li key={`step-${index}`} className="flex gap-3">
                       <span className="flex shrink-0 justify-center items-center w-6 h-6 rounded-full text-sm text-white bg-primary">
                         {index + 1}
